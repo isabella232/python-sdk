@@ -1,0 +1,2322 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to the Hyperwallet Python SDK documentation! &mdash; hyperwallet-sdk 1.4.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> hyperwallet-sdk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to the Hyperwallet Python SDK documentation!</a><ul>
+<li><a class="reference internal" href="#module-hyperwallet.api">API Endpoints</a></li>
+<li><a class="reference internal" href="#module-hyperwallet.utils.apiclient">API Client</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">hyperwallet-sdk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to the Hyperwallet Python SDK documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-the-hyperwallet-python-sdk-documentation">
+<h1>Welcome to the Hyperwallet Python SDK documentation!<a class="headerlink" href="#welcome-to-the-hyperwallet-python-sdk-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-hyperwallet.api">
+<span id="api-endpoints"></span><h2>API Endpoints<a class="headerlink" href="#module-hyperwallet.api" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="hyperwallet.api.Api">
+<em class="property">class </em><code class="descclassname">hyperwallet.api.</code><code class="descname">Api</code><span class="sig-paren">(</span><em>username=None</em>, <em>password=None</em>, <em>programToken=None</em>, <em>server='https://api.sandbox.hyperwallet.com'</em>, <em>encryptionData=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Python interface for the Hyperwallet API.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> – The username of this API user. <strong>REQUIRED</strong></li>
+<li><strong>password</strong> – The password of this API user. <strong>REQUIRED</strong></li>
+<li><strong>programToken</strong> – The token for the program this user is accessing. <strong>REQUIRED</strong></li>
+<li><strong>server</strong> – Your UAT or Production API URL if applicable.</li>
+<li><strong>encryptionData</strong> – Dictionary with params for encrypted requests (keys: clientPrivateKeySetLocation, hyperwalletKeySetLocation, etc).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>server</strong> defaults to the Hyperwallet Sandbox URL if not provided.</p>
+</div>
+<dl class="method">
+<dt id="hyperwallet.api.Api._Api__buildUrl">
+<code class="descname">_Api__buildUrl</code><span class="sig-paren">(</span><em>*paths</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api._Api__buildUrl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api._Api__updateTransferMethod">
+<code class="descname">_Api__updateTransferMethod</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>transferMethodToken=None</em>, <em>transferMethodName=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api._Api__updateTransferMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a Transfer method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>transferMethodToken</strong> – A token identifying the Transfer Method. <strong>REQUIRED</strong></li>
+<li><strong>transferMethodName</strong> – A Transfer Method name used in url. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Transfer Method information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An updated Transfer Method object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.activateUser">
+<code class="descname">activateUser</code><span class="sig-paren">(</span><em>userToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.activateUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create User Activate Status Transition.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User Create UserToken. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">StatusTransition.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createBankAccount">
+<code class="descname">createBankAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createBankAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Bank Account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Bank Account information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Account.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createBankAccountStatusTransition">
+<code class="descname">createBankAccountStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankAccountToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createBankAccountStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Bank Account Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankAccountToken</strong> – A token identifying the Bank Account. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Bank Account Status Transition information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Account Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createBankCard">
+<code class="descname">createBankCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createBankCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Bank Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Bank Card information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Card.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createBankCardStatusTransition">
+<code class="descname">createBankCardStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankCardToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createBankCardStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Bank Card Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankCardToken</strong> – A token identifying the Bank Card. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Bank Card Status Transition information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createPaperCheck">
+<code class="descname">createPaperCheck</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createPaperCheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Paper Check.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Paper Check information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Paper Check.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createPaperCheckStatusTransition">
+<code class="descname">createPaperCheckStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>paperCheckToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createPaperCheckStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Paper Check Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>paperCheckToken</strong> – A token identifying the Paper Check. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Paper Check Status Transition information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Paper Check Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createPayPalAccount">
+<code class="descname">createPayPalAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createPayPalAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a PayPal Account.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – A dictionary containing PayPal Account information. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A PayPal Account.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createPayPalAccountStatusTransition">
+<code class="descname">createPayPalAccountStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>payPalAccountToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createPayPalAccountStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a PayPal Account Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>payPalAccountToken</strong> – A token identifying the PayPal Account. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing PayPal Account Status Transition information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A PayPal Account Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createPayment">
+<code class="descname">createPayment</code><span class="sig-paren">(</span><em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createPayment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Payment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – A dictionary containing Payment information. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A Payment.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createPaymentStatusTransition">
+<code class="descname">createPaymentStatusTransition</code><span class="sig-paren">(</span><em>paymentToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createPaymentStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Payment Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>paymentToken</strong> – A token identifying the Payment. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing User Status Transition information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Payment Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createPrepaidCard">
+<code class="descname">createPrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createPrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Prepaid Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Prepaid Card information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createPrepaidCardStatusTransition">
+<code class="descname">createPrepaidCardStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createPrepaidCardStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Prepaid Card Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Prepaid Card Status Transition information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createTransfer">
+<code class="descname">createTransfer</code><span class="sig-paren">(</span><em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createTransfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Transfer.
+:param data:</p>
+<blockquote>
+<div>A dictionary containing Transfer information. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A Transfer.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createTransferMethod">
+<code class="descname">createTransferMethod</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>cacheToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createTransferMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Transfer Method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>cacheToken</strong> – A cache token identifying the Transfer Method. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Field Restriction information.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Transfer Method.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createTransferRefund">
+<code class="descname">createTransferRefund</code><span class="sig-paren">(</span><em>transferToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createTransferRefund" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Transfer Refund.
+:param transferToken:</p>
+<blockquote>
+<div>A token identifying the Transfer. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – A dictionary containing Transfer Refund information. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A Transfer Refund.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createTransferSpendBackRefund">
+<code class="descname">createTransferSpendBackRefund</code><span class="sig-paren">(</span><em>transferToken=None</em>, <em>sourceToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createTransferSpendBackRefund" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Transfer Refund.
+:param transferToken:</p>
+<blockquote>
+<div>A token identifying the Transfer. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – A dictionary containing Transfer Refund information. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A Transfer Refund.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createTransferStatusTransition">
+<code class="descname">createTransferStatusTransition</code><span class="sig-paren">(</span><em>transferToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createTransferStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Transfer Status Transition.
+:param transferToken:</p>
+<blockquote>
+<div>A token identifying the Transfer. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – A dictionary containing Transfer Status Transition information. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A Transfer Status Transition.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createUser">
+<code class="descname">createUser</code><span class="sig-paren">(</span><em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a User.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – A dictionary containing User information. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A User.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createUserStatusTransition">
+<code class="descname">createUserStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createUserStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create User Status Transition.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User Create UserToken. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – A dictionary containing User Status Create Data information. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">StatusTransition.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createVenmoAccount">
+<code class="descname">createVenmoAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createVenmoAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Venmo Account.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – A dictionary containing Venmo Account information. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A Venmo Account.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.createVenmoAccountStatusTransition">
+<code class="descname">createVenmoAccountStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>venmoAccountToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.createVenmoAccountStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Venmo Account Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>VenmoAccountToken</strong> – A token identifying the Venmo Account. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Venmo Account Status Transition information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Venmo Account Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.deactivateBankAccount">
+<code class="descname">deactivateBankAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankAccountToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.deactivateBankAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivate a Bank Account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankAccountToken</strong> – A token identifying the Bank Account. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the deactivation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Account Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.deactivateBankCard">
+<code class="descname">deactivateBankCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankCardToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.deactivateBankCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivate a Bank Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankCardToken</strong> – A token identifying the Bank Card. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the deactivation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.deactivatePaperCheck">
+<code class="descname">deactivatePaperCheck</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>paperCheckToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.deactivatePaperCheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivate a Paper Check.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>paperCheckToken</strong> – A token identifying the Paper Check. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the deactivation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Paper Check Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.deactivatePayPalAccount">
+<code class="descname">deactivatePayPalAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>payPalAccountToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.deactivatePayPalAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivate a PayPal Account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>payPalAccountToken</strong> – A token identifying the PayPal Account. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the deactivation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A PayPal Account Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.deactivatePrepaidCard">
+<code class="descname">deactivatePrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.deactivatePrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivate a Prepaid Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the deactivation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.deactivateUser">
+<code class="descname">deactivateUser</code><span class="sig-paren">(</span><em>userToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.deactivateUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create User DeActivate Status Transition.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User Create UserToken. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">StatusTransition.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.deactivateVenmoAccount">
+<code class="descname">deactivateVenmoAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>venmoAccountToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.deactivateVenmoAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivate a Venmo Account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>venmoAccountToken</strong> – A token identifying the Venmo Account. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the deactivation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Venmo Account Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.freezeUser">
+<code class="descname">freezeUser</code><span class="sig-paren">(</span><em>userToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.freezeUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create User Freeze Status Transition.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User Create UserToken. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">StatusTransition.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getAccount">
+<code class="descname">getAccount</code><span class="sig-paren">(</span><em>programToken=None</em>, <em>accountToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve an Account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>programToken</strong> – A token identifying the Program. <strong>REQUIRED</strong></li>
+<li><strong>accountToken</strong> – A token identifying the Account. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An Account.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getAuthenticationToken">
+<code class="descname">getAuthenticationToken</code><span class="sig-paren">(</span><em>userToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getAuthenticationToken" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a AuthenticationToken.
+:param userToken:</p>
+<blockquote>
+<div>A user token. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">An AuthenticationToken.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getBankAccount">
+<code class="descname">getBankAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankAccountToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getBankAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Bank Account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankAccountToken</strong> – A token identifying the Bank Account. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Account.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getBankAccountStatusTransition">
+<code class="descname">getBankAccountStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankAccountToken=None</em>, <em>statusTransitionToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getBankAccountStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Bank Account Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankAccountToken</strong> – A token identifying the Bank Account. <strong>REQUIRED</strong></li>
+<li><strong>statusTransitionToken</strong> – A token identifying the Bank Account Status Transition. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Account Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getBankCard">
+<code class="descname">getBankCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankCardToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getBankCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Bank Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankCardToken</strong> – A token identifying the Bank Card. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Card.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getBankCardStatusTransition">
+<code class="descname">getBankCardStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankCardToken=None</em>, <em>statusTransitionToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getBankCardStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Bank Card Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankCardToken</strong> – A token identifying the Bank Card. <strong>REQUIRED</strong></li>
+<li><strong>statusTransitionToken</strong> – A token identifying the Bank Card Status Transition. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getPaperCheck">
+<code class="descname">getPaperCheck</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>paperCheckToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getPaperCheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Paper Check.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>paperCheckToken</strong> – A token identifying the Paper Check. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Paper Check.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getPaperCheckStatusTransition">
+<code class="descname">getPaperCheckStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>paperCheckToken=None</em>, <em>statusTransitionToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getPaperCheckStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Paper Check Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>paperCheckToken</strong> – A token identifying the Paper Check. <strong>REQUIRED</strong></li>
+<li><strong>statusTransitionToken</strong> – A token identifying the Paper Check Status Transition. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Paper Check Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getPayPalAccount">
+<code class="descname">getPayPalAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>payPalAccountToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getPayPalAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a PayPal Account.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payPalAccountToken</strong> – A token identifying the PayPal Account. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A PayPal Account.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getPayPalAccountStatusTransition">
+<code class="descname">getPayPalAccountStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>payPalAccountToken=None</em>, <em>statusTransitionToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getPayPalAccountStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a PayPal Account Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>payPalAccountToken</strong> – A token identifying the PayPal Account. <strong>REQUIRED</strong></li>
+<li><strong>statusTransitionToken</strong> – A token identifying the PayPal Account Status Transition. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A PayPal Account Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getPayment">
+<code class="descname">getPayment</code><span class="sig-paren">(</span><em>paymentToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getPayment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Payment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>paymentToken</strong> – A token identifying the Payment. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A Payment.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getPaymentStatusTransition">
+<code class="descname">getPaymentStatusTransition</code><span class="sig-paren">(</span><em>paymentToken=None</em>, <em>statusTransitionToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getPaymentStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Payment Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>paymentToken</strong> – A token identifying the Payment. <strong>REQUIRED</strong></li>
+<li><strong>statusTransitionToken</strong> – A token identifying the Payment Status Transition. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Payment Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getPrepaidCard">
+<code class="descname">getPrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getPrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Prepaid Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getPrepaidCardStatusTransition">
+<code class="descname">getPrepaidCardStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>statusTransitionToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getPrepaidCardStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Prepaid Card Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>statusTransitionToken</strong> – A token identifying the Prepaid Card Status Transition. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getProgram">
+<code class="descname">getProgram</code><span class="sig-paren">(</span><em>programToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getProgram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Program.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>programToken</strong> – A token identifying the Program. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A Program.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getTransfer">
+<code class="descname">getTransfer</code><span class="sig-paren">(</span><em>transferToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getTransfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Transfer.
+:param transferToken:</p>
+<blockquote>
+<div>A token identifying the Transfer. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A Transfer.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getTransferMethodConfiguration">
+<code class="descname">getTransferMethodConfiguration</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>country=None</em>, <em>currency=None</em>, <em>transferMethodType=None</em>, <em>profileType=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getTransferMethodConfiguration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Transfer Method Configuration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>country</strong> – An ISO 3166-1 code identifying the country. <strong>REQUIRED</strong></li>
+<li><strong>currency</strong> – An ISO 4217-1 code identifying the currency. <strong>REQUIRED</strong></li>
+<li><strong>transferMethodType</strong> – A string identifying the type of Transfer Method. <strong>REQUIRED</strong></li>
+<li><strong>profileType</strong> – A string identifying the type of User. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Transfer Method Configuration.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getUser">
+<code class="descname">getUser</code><span class="sig-paren">(</span><em>userToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a User.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A User.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getUserStatusTransition">
+<code class="descname">getUserStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>statusTransitionToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getUserStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a User Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>statusTransitionToken</strong> – A token identifying the User Status Transition. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A User Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getVenmoAccount">
+<code class="descname">getVenmoAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>venmoAccountToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getVenmoAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Venmo Account.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>VenmoAccountToken</strong> – A token identifying the Venmo Account. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A Venmo Account.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getVenmoAccountStatusTransition">
+<code class="descname">getVenmoAccountStatusTransition</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>venmoAccountToken=None</em>, <em>statusTransitionToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getVenmoAccountStatusTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Venmo Account Status Transition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>VenmoAccountToken</strong> – A token identifying the Venmo Account. <strong>REQUIRED</strong></li>
+<li><strong>statusTransitionToken</strong> – A token identifying the Venmo Account Status Transition. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Venmo Account Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.getWebhookNotification">
+<code class="descname">getWebhookNotification</code><span class="sig-paren">(</span><em>webhookToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.getWebhookNotification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a Webhook Notification.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webhookToken</strong> – A token identifying the Webhook. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A Webhook.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listBalancesForAccount">
+<code class="descname">listBalancesForAccount</code><span class="sig-paren">(</span><em>programToken=None</em>, <em>accountToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listBalancesForAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Account Balances.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>programToken</strong> – A token identifying the Program. <strong>REQUIRED</strong></li>
+<li><strong>accountToken</strong> – A token identifying the Account. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Balances.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listBalancesForPrepaidCard">
+<code class="descname">listBalancesForPrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listBalancesForPrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Prepaid Card Balances.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Balances.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listBalancesForUser">
+<code class="descname">listBalancesForUser</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listBalancesForUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>List User Balances.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Balances.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listBankAccountStatusTransitions">
+<code class="descname">listBankAccountStatusTransitions</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankAccountToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listBankAccountStatusTransitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Bank Account Status Transitions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankAccountToken</strong> – A token identifying the Bank Account. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Bank Account Status Transitions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listBankAccounts">
+<code class="descname">listBankAccounts</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listBankAccounts" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Bank Accounts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Bank Accounts.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listBankCardStatusTransitions">
+<code class="descname">listBankCardStatusTransitions</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankCardToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listBankCardStatusTransitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Bank Card Status Transitions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankCardToken</strong> – A token identifying the Bank Card. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Bank Card Status Transitions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listBankCards">
+<code class="descname">listBankCards</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listBankCards" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Bank Cards.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Bank Cards.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listPaperCheckStatusTransitions">
+<code class="descname">listPaperCheckStatusTransitions</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>paperCheckToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listPaperCheckStatusTransitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Paper Check Status Transitions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>paperCheckToken</strong> – A token identifying the Paper Check. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Paper Check Status Transitions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listPaperChecks">
+<code class="descname">listPaperChecks</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listPaperChecks" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Paper Checks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Paper Checks.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listPayPalAccountStatusTransitions">
+<code class="descname">listPayPalAccountStatusTransitions</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>payPalAccountToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listPayPalAccountStatusTransitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List PayPal Account Status Transitions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>payPalAccountToken</strong> – A token identifying the PayPal Account. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of PayPal Account Status Transitions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listPayPalAccounts">
+<code class="descname">listPayPalAccounts</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listPayPalAccounts" title="Permalink to this definition">¶</a></dt>
+<dd><p>List PayPal Accounts.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> – A dictionary containing query parameters.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An array of PayPal Accounts.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listPaymentStatusTransitions">
+<code class="descname">listPaymentStatusTransitions</code><span class="sig-paren">(</span><em>paymentToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listPaymentStatusTransitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Payment Status Transitions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>paymentToken</strong> – A token identifying the Payment. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Payment Status Transitions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listPayments">
+<code class="descname">listPayments</code><span class="sig-paren">(</span><em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listPayments" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Payments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> – A dictionary containing query parameters.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An array of Payments.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listPrepaidCardStatusTransitions">
+<code class="descname">listPrepaidCardStatusTransitions</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listPrepaidCardStatusTransitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Prepaid Card Status Transitions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Prepaid Card Status Transitions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listPrepaidCards">
+<code class="descname">listPrepaidCards</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listPrepaidCards" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Prepaid Cards.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Prepaid Cards.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listReceiptsForAccount">
+<code class="descname">listReceiptsForAccount</code><span class="sig-paren">(</span><em>programToken=None</em>, <em>accountToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listReceiptsForAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Account Receipts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>programToken</strong> – A token identifying the Program. <strong>REQUIRED</strong></li>
+<li><strong>accountToken</strong> – A token identifying the Account. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Receipts.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listReceiptsForPrepaidCard">
+<code class="descname">listReceiptsForPrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listReceiptsForPrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Prepaid Card Receipts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Receipts.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listReceiptsForUser">
+<code class="descname">listReceiptsForUser</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listReceiptsForUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>List User Receipts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Receipts.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listTransferMethodConfigurations">
+<code class="descname">listTransferMethodConfigurations</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listTransferMethodConfigurations" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Transfer Method Configurations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Transfer Method Configurations.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listTransfers">
+<code class="descname">listTransfers</code><span class="sig-paren">(</span><em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listTransfers" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Transfers.
+:param params:</p>
+<blockquote>
+<div>A dictionary containing query parameters.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">An array of Transfers.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listUserStatusTransitions">
+<code class="descname">listUserStatusTransitions</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listUserStatusTransitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List User Status Transitions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of User Status Transitions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listUsers">
+<code class="descname">listUsers</code><span class="sig-paren">(</span><em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listUsers" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Users.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> – A dictionary containing query parameters.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An array of Users.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listVenmoAccountStatusTransitions">
+<code class="descname">listVenmoAccountStatusTransitions</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>venmoAccountToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listVenmoAccountStatusTransitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Venmo Account Status Transitions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>venmoAccountToken</strong> – A token identifying the Venmo Account. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An array of Venmo Account Status Transitions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listVenmoAccounts">
+<code class="descname">listVenmoAccounts</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listVenmoAccounts" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Venmo Accounts.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> – A dictionary containing query parameters.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An array of Venmo Accounts.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.listWebhookNotifications">
+<code class="descname">listWebhookNotifications</code><span class="sig-paren">(</span><em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.listWebhookNotifications" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Webhook Notifications.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> – A dictionary containing query parameters.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An array of Webhooks.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.lockPrepaidCard">
+<code class="descname">lockPrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.lockPrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lock a Prepaid Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the lock.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.lockUser">
+<code class="descname">lockUser</code><span class="sig-paren">(</span><em>userToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.lockUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create User Lock Status Transition.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User Create UserToken. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">StatusTransition.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.lostOrStolenPrepaidCard">
+<code class="descname">lostOrStolenPrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.lostOrStolenPrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Report a Prepaid Card lost or stolen.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the lost or stolen report.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.preactivateUser">
+<code class="descname">preactivateUser</code><span class="sig-paren">(</span><em>userToken=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.preactivateUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create User Pre Activate Status Transition.
+:param userToken:</p>
+<blockquote>
+<div>A token identifying the User Create UserToken. <strong>REQUIRED</strong></div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">StatusTransition.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.suspendPrepaidCard">
+<code class="descname">suspendPrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.suspendPrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suspend a Prepaid Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the suspension.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.unlockPrepaidCard">
+<code class="descname">unlockPrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.unlockPrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unlock a Prepaid Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the unlock.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.unsuspendPrepaidCard">
+<code class="descname">unsuspendPrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>notes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.unsuspendPrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsuspend a Prepaid Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>notes</strong> – A string describing the unsuspension.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card Status Transition.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.updateBankAccount">
+<code class="descname">updateBankAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankAccountToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.updateBankAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a Bank Account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankAccountToken</strong> – A token identifying the Bank Account. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Bank Account information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Account.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.updateBankCard">
+<code class="descname">updateBankCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>bankCardToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.updateBankCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a Bank Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>bankCardToken</strong> – A token identifying the Bank Card. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Bank Card information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Bank Card.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.updatePaperCheck">
+<code class="descname">updatePaperCheck</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>paperCheckToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.updatePaperCheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a Paper Check.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>paperCheckToken</strong> – A token identifying the Paper Check. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Paper Check information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Paper Check.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.updatePayPalAccount">
+<code class="descname">updatePayPalAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>payPalAccountToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.updatePayPalAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a PayPal Account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>payPalAccountToken</strong> – A token identifying the PayPal Account. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing PayPal Account information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A PayPal Account.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.updatePrepaidCard">
+<code class="descname">updatePrepaidCard</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>prepaidCardToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.updatePrepaidCard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a Prepaid Card.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>prepaidCardToken</strong> – A token identifying the Prepaid Card. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Prepaid Card information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Prepaid Card.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.updateUser">
+<code class="descname">updateUser</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.updateUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a User.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing User information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A User.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.updateVenmoAccount">
+<code class="descname">updateVenmoAccount</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>venmoAccountToken=None</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.updateVenmoAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a Venmo Account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>VenmoAccountToken</strong> – A token identifying the Venmo Account. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing Venmo Account information. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Venmo Account.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.api.Api.uploadDocumentsForUser">
+<code class="descname">uploadDocumentsForUser</code><span class="sig-paren">(</span><em>userToken=None</em>, <em>data=None</em>, <em>files=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.api.Api.uploadDocumentsForUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload documents for Users</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userToken</strong> – A token identifying the User. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing data for the input documents. <strong>REQUIRED</strong>
+sample data:
+jsonData={‘data’: [‘{“documents”: [{“type”: “DRIVERS_LICENSE”, “country”: “US”, “category”: “IDENTIFICATION”}]}’]};</li>
+<li><strong>files</strong> – Dictionary of <code class="docutils literal notranslate"><span class="pre">'filename':</span> <span class="pre">file-like-objects</span></code>
+for multipart encoding upload. <strong>REQUIRED</strong>
+sample data:
+files = {
+‘drivers_license_front’: open(‘F1.png’, ‘rb’),
+‘drivers_license_back’: open(‘F22.png’, ‘rb’)
+}</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A User with documents information</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hyperwallet.utils.apiclient">
+<span id="api-client"></span><h2>API Client<a class="headerlink" href="#module-hyperwallet.utils.apiclient" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="hyperwallet.utils.apiclient.ApiClient">
+<em class="property">class </em><code class="descclassname">hyperwallet.utils.apiclient.</code><code class="descname">ApiClient</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>server</em>, <em>encryptionData=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.utils.apiclient.ApiClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Hyperwallet API Client.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> – The username of this API user. <strong>REQUIRED</strong></li>
+<li><strong>password</strong> – The password of this API user. <strong>REQUIRED</strong></li>
+<li><strong>server</strong> – The base URL of the API. <strong>REQUIRED</strong></li>
+<li><strong>encryptionData</strong> – Array with params for encrypted requests(Fields: clientPrivateKeySetLocation, hyperwalletKeySetLocation).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="hyperwallet.utils.apiclient.ApiClient._ApiClient__checkResponseHeaderContentType">
+<code class="descname">_ApiClient__checkResponseHeaderContentType</code><span class="sig-paren">(</span><em>response</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.utils.apiclient.ApiClient._ApiClient__checkResponseHeaderContentType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check response header Content-Type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>response</strong> – Response to be checked. <strong>REQUIRED</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.utils.apiclient.ApiClient._ApiClient__getRequestData">
+<code class="descname">_ApiClient__getRequestData</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.utils.apiclient.ApiClient._ApiClient__getRequestData" title="Permalink to this definition">¶</a></dt>
+<dd><p>If encryption is enabled try to encrypt request data, otherwise no action required.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> – Not encrypted request data. <strong>REQUIRED</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Request data, encrypted if necessary.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.utils.apiclient.ApiClient._makeRequest">
+<code class="descname">_makeRequest</code><span class="sig-paren">(</span><em>method=None</em>, <em>url=None</em>, <em>data=None</em>, <em>headers=None</em>, <em>params=None</em>, <em>files=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.utils.apiclient.ApiClient._makeRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process an API response to ensure a JSON object is returned always.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>method</strong> – The HTTP method to use for the request. <strong>REQUIRED</strong></li>
+<li><strong>url</strong> – A partial URL to specify the API endpoint. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing data for the request body.</li>
+<li><strong>headers</strong> – A dictionary containing additional request headers.</li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A JSON object containing the response data or an error object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Hyperwallet API supports <strong>GET</strong>, <strong>POST</strong>, and <strong>PUT</strong>.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.utils.apiclient.ApiClient.doGet">
+<code class="descname">doGet</code><span class="sig-paren">(</span><em>partialUrl</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.utils.apiclient.ApiClient.doGet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit a GET to the API.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>partialUrl</strong> – A partial URL to specify the API endpoint. <strong>REQUIRED</strong></li>
+<li><strong>params</strong> – A dictionary containing query parameters.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The API response.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.utils.apiclient.ApiClient.doPost">
+<code class="descname">doPost</code><span class="sig-paren">(</span><em>partialUrl</em>, <em>data</em>, <em>headers={}</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.utils.apiclient.ApiClient.doPost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit a POST to the API.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>partialUrl</strong> – A partial URL to specify the API endpoint. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing data for the request body. <strong>REQUIRED</strong></li>
+<li><strong>headers</strong> – A dictionary containing additional request headers.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The API response.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.utils.apiclient.ApiClient.doPut">
+<code class="descname">doPut</code><span class="sig-paren">(</span><em>partialUrl</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.utils.apiclient.ApiClient.doPut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit a PUT to the API.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>partialUrl</strong> – A partial URL to specify the API endpoint. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing data for the request body. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The API response.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hyperwallet.utils.apiclient.ApiClient.encrypted">
+<code class="descname">encrypted</code><a class="headerlink" href="#hyperwallet.utils.apiclient.ApiClient.encrypted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hyperwallet.utils.apiclient.ApiClient.putDocument">
+<code class="descname">putDocument</code><span class="sig-paren">(</span><em>partialUrl</em>, <em>data</em>, <em>files</em><span class="sig-paren">)</span><a class="headerlink" href="#hyperwallet.utils.apiclient.ApiClient.putDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit a PUT to the API.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>partialUrl</strong> – A partial URL to specify the API endpoint. <strong>REQUIRED</strong></li>
+<li><strong>data</strong> – A dictionary containing data for the input documents. <strong>REQUIRED</strong></li>
+<li><strong>files</strong> – Dictionary of <code class="docutils literal notranslate"><span class="pre">'filename':</span> <span class="pre">file-like-objects</span></code>
+for multipart encoding upload. <strong>REQUIRED</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The API response.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Hyperwallet Systems Inc
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
